@@ -384,88 +384,119 @@ document.addEventListener('DOMContentLoaded', function () {
     return tomorrow;
   }
 
-  // Day 완료 시 로컬 스토리지에 저장
+  // Day 해금 상태 관리 함수들
+  function unlockDay(day) {
+    // 이미 해금된 Day는 다시 확인하지 않음
+    if (isDayUnlocked(day)) {
+      return;
+    }
+
+    // Day 해금 상태 로컬 스토리지에 저장
+    localStorage.setItem(`jindam_day${day}_unlocked`, 'true');
+    console.log(`Day ${day} 영구 해금됨`);
+
+    // Day 버튼 활성화
+    updateDayButtonState(day);
+  }
+
+  function isDayUnlocked(day) {
+    // Day 1은 항상 해금됨
+    if (day === 1) return true;
+
+    // 로컬 스토리지에서 해금 상태 확인
+    return localStorage.getItem(`jindam_day${day}_unlocked`) === 'true';
+  }
+
+  function updateDayButtonState(day) {
+    const dayButton = document.querySelector(`.day-button[data-day="${day}"]`);
+    if (dayButton) {
+      const isUnlocked = isDayUnlocked(day);
+      dayButton.disabled = !isUnlocked;
+
+      if (isUnlocked) {
+        console.log(`Day ${day} 버튼 활성화됨`);
+      }
+    }
+  }
+
+  function updateAllDayButtons() {
+    for (let i = 1; i <= 10; i++) {
+      updateDayButtonState(i);
+    }
+  }
+
+  // Day 완료 처리 수정
   function completeDay(day) {
+    // 현재 Day 완료 기록
     const completionData = {
       day: day,
       completedAt: new Date().toISOString(),
       nextDayAvailableAt: getTomorrowMidnight().toISOString(),
     };
+
     localStorage.setItem(
       `jindam_day${day}_completed`,
       JSON.stringify(completionData)
     );
-    console.log(
-      `Day ${day} 완료 저장됨. 다음 Day는 ${new Date(
-        completionData.nextDayAvailableAt
-      ).toLocaleString()}에 오픈`
-    );
+    console.log(`Day ${day} 완료 저장됨`);
+
+    // 중요: 다음 Day 해금 (다음날 자정에 활성화됨)
+    checkAndUnlockNextDay(day);
   }
 
-  // Day의 활성화 상태 확인
-  function isDayAvailable(day) {
-    // Day 1은 항상 활성화
-    if (day === 1) return true;
+  // 다음 Day 자정 체크 및 해금
+  function checkAndUnlockNextDay(completedDay) {
+    if (completedDay >= 10) return; // Day 10이 마지막
 
-    // 이전 Day가 완료되었는지 확인
-    const prevDayCompletionData = localStorage.getItem(
-      `jindam_day${day - 1}_completed`
+    const nextDay = completedDay + 1;
+
+    // 이미 해금되었으면 체크 불필요
+    if (isDayUnlocked(nextDay)) {
+      return;
+    }
+
+    const completionDataStr = localStorage.getItem(
+      `jindam_day${completedDay}_completed`
     );
-    if (!prevDayCompletionData) return false;
+    if (!completionDataStr) return;
 
-    // 완료 데이터 파싱
-    const completionData = JSON.parse(prevDayCompletionData);
+    const completionData = JSON.parse(completionDataStr);
     const nextDayAvailableAt = new Date(completionData.nextDayAvailableAt);
-
-    // 현재 시간이 다음 Day 오픈 시간 이후인지 확인
     const now = new Date();
-    return now >= nextDayAvailableAt;
-  }
 
-  // 모든 Day 버튼 상태 업데이트
-  function updateAllDayButtons() {
-    for (let i = 1; i <= 10; i++) {
-      const dayBtn = document.querySelector(`.day-button[data-day="${i}"]`);
-      if (dayBtn) {
-        const isAvailable = isDayAvailable(i);
-        dayBtn.disabled = !isAvailable;
+    // 다음날 자정이 지났으면 해금
+    if (now >= nextDayAvailableAt) {
+      unlockDay(nextDay);
+    } else {
+      // 자정까지 대기 설정
+      const timeToWait = nextDayAvailableAt.getTime() - now.getTime();
+      console.log(
+        `Day ${nextDay} 해금까지 ${Math.floor(
+          timeToWait / (1000 * 60 * 60)
+        )}시간 ${Math.floor(
+          (timeToWait % (1000 * 60 * 60)) / (1000 * 60)
+        )}분 남음`
+      );
 
-        if (isAvailable) {
-          console.log(`Day ${i} 활성화됨`);
-        } else {
-          // 비활성화된 경우 남은 시간 표시 (선택적)
-          if (i > 1) {
-            const prevDayCompletionData = localStorage.getItem(
-              `jindam_day${i - 1}_completed`
-            );
-            if (prevDayCompletionData) {
-              const data = JSON.parse(prevDayCompletionData);
-              const availableAt = new Date(data.nextDayAvailableAt);
-              const now = new Date();
-              if (availableAt > now) {
-                const hoursLeft = Math.floor(
-                  (availableAt - now) / (1000 * 60 * 60)
-                );
-                const minutesLeft = Math.floor(
-                  ((availableAt - now) % (1000 * 60 * 60)) / (1000 * 60)
-                );
-                console.log(
-                  `Day ${i}는 ${hoursLeft}시간 ${minutesLeft}분 후에 활성화됩니다`
-                );
-              }
-            }
-          }
-        }
-      }
+      // 자정에 체크하도록 타이머 설정 (실제 앱에서는 더 복잡한 방식으로 구현해야 함)
+      setTimeout(function () {
+        unlockDay(nextDay);
+        updateAllDayButtons();
+      }, timeToWait);
     }
   }
 
   // 게임 초기화
   createDayButtons();
 
-  // Day 버튼 상태 업데이트
-  updateAllDayButtons();
+  // 현재 시간 체크하여 해금 가능한 Day 확인
+  for (let i = 1; i < 10; i++) {
+    if (isDayUnlocked(i)) {
+      // 이미 해금된 Day의 다음 Day도 조건 충족 시 해금
+      checkAndUnlockNextDay(i);
+    }
+  }
 
-  // 1시간마다 Day 버튼 상태 업데이트 (자정 체크를 위해)
-  setInterval(updateAllDayButtons, 60 * 60 * 1000);
+  // 모든 Day 버튼 상태 업데이트
+  updateAllDayButtons();
 });
