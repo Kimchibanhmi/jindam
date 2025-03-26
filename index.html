@@ -19,19 +19,19 @@
           <h2>굳히기 게임!</h2>
           <br />
           <p>
-            <strong>⛰️목표: 10일동안 100문장이 1초 안에 '툭'</strong>
+            <strong>⛰️ 목표: 10일동안 100문장이 1초 안에 '툭'</strong>
             <br />
           </p>
-          <p>
-            ⚫️이 게임 속 문장들은 HSK3급 <br />빈출어휘로 구성되어 있습니다.
-          </p>
-          <p>말하기 훈련하면서 HSK3급 준비도!</p>
-          <p>⚫️진담중국어 챌린저가 참여하면 <br />더욱 효과적입니다.</p>
-          <p>🔴방법: 하루 딱 10문장! 제한 시간 안에!</p>
-          <p>각 단어 카드를 클릭하여 옳은 순서로 배열!</p>
+          <p>⚫️ 이 게임 속 문장들은 HSK3급 빈출어휘로 구성되어 있습니다.</p>
+          <p>⚫️ 말하기 훈련하면서 HSK3급 준비도!</p>
+          <p>⚫️ 진담중국어 챌린저가 참여하면 더욱 효과적입니다.</p>
+          <p>🔴 방법: 하루 딱 10문장! 제한 시간 안에!</p>
+          <p>🔴 각 단어 카드를 클릭하여 옳은 순서로 배열!</p>
           <p>🌟 1초 안에 툭툭 나오는게 포인트!</p>
           <p>🌟 꼭 '입'으로 소리내기!</p>
-          <button id="start-game">게임 시작하기</button>
+          <div class="button-container">
+            <button id="start-game">게임 시작하기</button>
+          </div>
         </div>
       </div>
 
@@ -49,10 +49,10 @@
 
         <div class="game-header">
           <div class="sentence-info">
-            <span id="current-day">Day 1</span>
-            <span id="sentence-count">문장 1/10</span>
+            <span id="current-day"></span>
+            <span id="sentence-count"></span>
           </div>
-          <div class="timer">남은 시간: <span id="time-left">20</span>초</div>
+          <div class="timer">남은 시간: <span id="time-left"></span>초</div>
         </div>
 
         <div class="sentence-display">
@@ -60,23 +60,23 @@
         </div>
 
         <div class="card-area">
-          <div id="available-cards" class="card-container">
-            <!-- 사용할 수 있는 카드들이 여기에 표시됩니다 -->
-          </div>
-
           <div class="answer-area">
             <div id="placed-cards" class="card-container">
               <!-- 배치된 카드들이 여기에 표시됩니다 -->
             </div>
+          </div>
+
+          <div id="available-cards" class="card-container">
+            <!-- 사용할 수 있는 카드들이 여기에 표시됩니다 -->
           </div>
         </div>
 
         <div class="control-buttons">
           <button id="check-button">확인하기</button>
           <button id="next-button" class="hidden">다음 문제</button>
-        </div>
 
-        <div id="result-message" class="hidden">정답입니다!</div>
+          <div id="result-message" class="hidden"></div>
+        </div>
       </div>
 
       <div id="review-popup" class="popup hidden">
@@ -85,7 +85,9 @@
           <div id="review-sentences">
             <!-- 복습할 문장들이 여기에 표시됩니다 -->
           </div>
-          <button id="finish-review">완료</button>
+          <div class="button-container">
+            <button id="finish-review">완료</button>
+          </div>
         </div>
       </div>
     </div>
