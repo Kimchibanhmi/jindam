@@ -67,8 +67,8 @@ const sentenceData = {
       isFinal: false,
       korean: '학교에서',
       chinese: {
-        hanzi: ['在', '学', '校'],
-        pinyin: ['zài', 'xué', 'xiào'],
+        hanzi: ['在', '学校'],
+        pinyin: ['zài', 'xuéxiào'],
       },
     },
     {
