@@ -189,6 +189,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 타이머 시작
   function startTimer() {
+    // 이미 실행 중인 타이머가 있으면 초기화
+    if (timer !== null) {
+      clearInterval(timer);
+    }
+
     timeRemaining = 20;
     timeLeft.textContent = timeRemaining;
 
@@ -198,6 +203,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (timeRemaining <= 0) {
         clearInterval(timer);
+        timer = null; // 타이머 변수 초기화
+
+        // 정답 확인 중이거나 다음 문제 버튼이 보이면 타이머 동작 중지
+        if (!nextButton.classList.contains('hidden')) {
+          return; // 아무 작업도 하지 않음
+        }
+
         // 시간 초과 시 현재 레벨 다시 시작
         resetCurrentLevel();
       }
@@ -206,13 +218,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 타이머 초기화
   function resetTimer() {
-    clearInterval(timer);
+    if (timer !== null) {
+      clearInterval(timer);
+      timer = null;
+    }
     timeRemaining = 20;
     timeLeft.textContent = timeRemaining;
   }
 
   // 현재 레벨 다시 시작
   function resetCurrentLevel() {
+    // 다음 문제 버튼이 표시되어 있으면 리셋하지 않음
+    if (!nextButton.classList.contains('hidden')) {
+      return;
+    }
+
     const sentence = currentLevels[currentLevelIndex];
     createCards(sentence);
     resetTimer();
@@ -230,6 +250,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // 정답 확인
     if (arraysEqual(selectedHanzi, correctHanzi)) {
       // 정답일 경우
+      clearInterval(timer); // 타이머 완전히 중지
+      timer = null; // 타이머 변수 초기화
+
       resultMessage.textContent = '정답입니다!';
       resultMessage.className = 'correct'; // CSS 클래스 추가
       resultMessage.classList.remove('hidden');
