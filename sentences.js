@@ -37,8 +37,8 @@ const sentenceData = {
       isFinal: true,
       korean: '나는 도서관에 간다',
       chinese: {
-        hanzi: ['我', '去', '图', '书', '馆'],
-        pinyin: ['wǒ', 'qù', 'tú', 'shū', 'guǎn'],
+        hanzi: ['我', '去', '图书馆'],
+        pinyin: ['wǒ', 'qù', 'túshūguǎn'],
       },
     },
     {
@@ -77,8 +77,8 @@ const sentenceData = {
       isFinal: true,
       korean: '나는 학교에서 공부한다',
       chinese: {
-        hanzi: ['我', '在', '学', '校', '学', '习'],
-        pinyin: ['wǒ', 'zài', 'xué', 'xiào', 'xué', 'xí'],
+        hanzi: ['我', '在', '学校', '学习'],
+        pinyin: ['wǒ', 'zài', 'xuéxiào', 'xuéxí'],
       },
     },
   ],
