@@ -38,11 +38,6 @@ header h1 {
   letter-spacing: 1px;
 }
 
-header h2 {
-  font-size: 1.2rem;
-  font-weight: 400;
-  color: #d35400;
-}
 
 header:after {
   content: '';
@@ -468,4 +463,12 @@ button:active {
 
 #start-game:active {
   transform: translateY(1px);
+}
+
+/* Day 선택 섹션의 제목 가운데 정렬 */
+#day-selection h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #d35400;
+  font-size: 1.5rem;
 }
