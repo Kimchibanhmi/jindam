@@ -311,7 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // 복습 팝업 표시
   function showReviewPopup() {
     gameArea.classList.add('hidden');
-    reviewPopup.classList.remove('hidden');
 
     // 복습할 문장 추가
     reviewSentences.innerHTML = '';
@@ -324,18 +323,31 @@ document.addEventListener('DOMContentLoaded', function () {
         const reviewItem = document.createElement('div');
         reviewItem.classList.add('review-item');
 
+        // 한자 텍스트
         const chineseText = document.createElement('div');
         chineseText.classList.add('chinese');
         chineseText.textContent = finalSentence.chinese.hanzi.join('');
 
+        // 병음 텍스트 추가
+        const pinyinText = document.createElement('div');
+        pinyinText.classList.add('pinyin');
+        pinyinText.textContent = finalSentence.chinese.pinyin.join(' ');
+
+        // 한국어 텍스트
         const koreanText = document.createElement('div');
+        koreanText.classList.add('korean');
         koreanText.textContent = finalSentence.korean;
 
+        // 요소 추가
         reviewItem.appendChild(chineseText);
+        reviewItem.appendChild(pinyinText); // 병음 요소 추가
         reviewItem.appendChild(koreanText);
+
         reviewSentences.appendChild(reviewItem);
       }
     });
+
+    reviewPopup.classList.remove('hidden');
   }
 
   // 이벤트 리스너 설정
