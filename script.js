@@ -229,7 +229,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 정답 확인
     if (arraysEqual(selectedHanzi, correctHanzi)) {
-      clearInterval(timer);
+      // 정답일 경우
+      resultMessage.textContent = '정답입니다!';
+      resultMessage.className = 'correct'; // CSS 클래스 추가
       resultMessage.classList.remove('hidden');
       checkButton.classList.add('hidden');
       nextButton.classList.remove('hidden');
@@ -240,8 +242,14 @@ document.addEventListener('DOMContentLoaded', function () {
         updateProgress();
       }
     } else {
-      alert('틀렸습니다. 다시 시도해보세요.');
-      resetCurrentLevel();
+      // 오답일 경우
+      resultMessage.textContent = '틀렸습니다. 다시 시도해보세요.';
+      resultMessage.className = 'incorrect'; // CSS 클래스 추가
+      resultMessage.classList.remove('hidden');
+      setTimeout(function () {
+        resultMessage.classList.add('hidden');
+        resetCurrentLevel();
+      }, 500); // 0.5초 후 메시지 숨기기
     }
   }
 
@@ -317,21 +325,112 @@ document.addEventListener('DOMContentLoaded', function () {
   nextButton.addEventListener('click', nextQuestion);
 
   finishReviewBtn.addEventListener('click', function () {
+    // Day 완료 기록
+    completeDay(currentDay);
+
+    // 복습 팝업 숨기고 Day 선택 화면 표시
     reviewPopup.classList.add('hidden');
     daySelection.classList.remove('hidden');
 
-    // 다음 Day 활성화 (실제로는 다음날 자정에 활성화해야 함)
-    // 여기서는 데모를 위해 바로 활성화
-    if (currentDay < 10) {
-      const nextDayBtn = document.querySelector(
-        `.day-button[data-day="${currentDay + 1}"]`
-      );
-      if (nextDayBtn) {
-        nextDayBtn.disabled = false;
+    // Day 버튼 상태 업데이트
+    updateAllDayButtons();
+  });
+
+  // 날짜 유틸리티 함수
+  function getTodayDateString() {
+    const now = new Date();
+    return `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`;
+  }
+
+  function getTomorrowMidnight() {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    return tomorrow;
+  }
+
+  // Day 완료 시 로컬 스토리지에 저장
+  function completeDay(day) {
+    const completionData = {
+      day: day,
+      completedAt: new Date().toISOString(),
+      nextDayAvailableAt: getTomorrowMidnight().toISOString(),
+    };
+    localStorage.setItem(
+      `jindam_day${day}_completed`,
+      JSON.stringify(completionData)
+    );
+    console.log(
+      `Day ${day} 완료 저장됨. 다음 Day는 ${new Date(
+        completionData.nextDayAvailableAt
+      ).toLocaleString()}에 오픈`
+    );
+  }
+
+  // Day의 활성화 상태 확인
+  function isDayAvailable(day) {
+    // Day 1은 항상 활성화
+    if (day === 1) return true;
+
+    // 이전 Day가 완료되었는지 확인
+    const prevDayCompletionData = localStorage.getItem(
+      `jindam_day${day - 1}_completed`
+    );
+    if (!prevDayCompletionData) return false;
+
+    // 완료 데이터 파싱
+    const completionData = JSON.parse(prevDayCompletionData);
+    const nextDayAvailableAt = new Date(completionData.nextDayAvailableAt);
+
+    // 현재 시간이 다음 Day 오픈 시간 이후인지 확인
+    const now = new Date();
+    return now >= nextDayAvailableAt;
+  }
+
+  // 모든 Day 버튼 상태 업데이트
+  function updateAllDayButtons() {
+    for (let i = 1; i <= 10; i++) {
+      const dayBtn = document.querySelector(`.day-button[data-day="${i}"]`);
+      if (dayBtn) {
+        const isAvailable = isDayAvailable(i);
+        dayBtn.disabled = !isAvailable;
+
+        if (isAvailable) {
+          console.log(`Day ${i} 활성화됨`);
+        } else {
+          // 비활성화된 경우 남은 시간 표시 (선택적)
+          if (i > 1) {
+            const prevDayCompletionData = localStorage.getItem(
+              `jindam_day${i - 1}_completed`
+            );
+            if (prevDayCompletionData) {
+              const data = JSON.parse(prevDayCompletionData);
+              const availableAt = new Date(data.nextDayAvailableAt);
+              const now = new Date();
+              if (availableAt > now) {
+                const hoursLeft = Math.floor(
+                  (availableAt - now) / (1000 * 60 * 60)
+                );
+                const minutesLeft = Math.floor(
+                  ((availableAt - now) % (1000 * 60 * 60)) / (1000 * 60)
+                );
+                console.log(
+                  `Day ${i}는 ${hoursLeft}시간 ${minutesLeft}분 후에 활성화됩니다`
+                );
+              }
+            }
+          }
+        }
       }
     }
-  });
+  }
 
   // 게임 초기화
   createDayButtons();
+
+  // Day 버튼 상태 업데이트
+  updateAllDayButtons();
+
+  // 1시간마다 Day 버튼 상태 업데이트 (자정 체크를 위해)
+  setInterval(updateAllDayButtons, 60 * 60 * 1000);
 });
