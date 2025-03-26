@@ -374,14 +374,38 @@ button:active {
   margin-bottom: 1.5rem;
   padding: 1rem;
   border-bottom: 1px dashed #e67e22;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
 }
 
+.review-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 한자 스타일 */
 .review-item .chinese {
   font-family: 'Noto Sans SC', sans-serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
   color: #d35400;
   font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+/* 병음 스타일 */
+.review-item .pinyin {
+  font-size: 1.1rem;
+  color: #e67e22;
+  margin-bottom: 0.8rem;
+  font-family: 'Arial', sans-serif;
+}
+
+/* 한국어 스타일 */
+.review-item .korean {
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .hidden {
