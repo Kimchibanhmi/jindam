@@ -249,30 +249,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 정답 확인
     if (arraysEqual(selectedHanzi, correctHanzi)) {
-      // 정답일 경우
-      clearInterval(timer); // 타이머 완전히 중지
-      timer = null; // 타이머 변수 초기화
-
-      resultMessage.textContent = '정답입니다!';
-      resultMessage.className = 'correct'; // CSS 클래스 추가
-      resultMessage.classList.remove('hidden');
-      checkButton.classList.add('hidden');
-      nextButton.classList.remove('hidden');
+      // 정답일 경우 - 메시지 없이 바로 다음으로 진행
+      clearInterval(timer); // 타이머 중지
 
       // 현재 레벨이 최종 레벨인지 확인
       if (sentence.isFinal) {
         completedSentences++;
-        updateProgress();
+      }
+
+      // 다음 단계 또는 다음 문장으로 진행
+      if (currentLevelIndex < currentLevels.length - 1) {
+        currentLevelIndex++;
+        loadSentence();
+      } else {
+        currentLevelIndex = 0;
+        currentSentenceIndex++;
+        loadSentence();
       }
     } else {
-      // 오답일 경우
-      resultMessage.textContent = '틀렸습니다. 다시 시도해보세요.';
-      resultMessage.className = 'incorrect'; // CSS 클래스 추가
-      resultMessage.classList.remove('hidden');
+      // 오답일 경우 - 메시지 없이 화면만 흔들림
+      const gameArea = document.getElementById('game-area');
+      gameArea.classList.add('shake');
+
+      // 애니메이션 종료 후 클래스 제거
       setTimeout(function () {
-        resultMessage.classList.add('hidden');
-        resetCurrentLevel();
-      }, 500); // 0.5초 후 메시지 숨기기
+        gameArea.classList.remove('shake');
+        resetCurrentLevel(); // 현재 레벨 리셋
+      }, 800); // 0.8초 후 제거 (애니메이션 길이와 맞춤)
     }
   }
 
@@ -499,4 +502,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // 모든 Day 버튼 상태 업데이트
   updateAllDayButtons();
+
+  // 결과 메시지 요소 항상 숨김 처리
+  if (resultMessage) {
+    resultMessage.classList.add('hidden');
+    // 메시지 요소 참조 제거하거나 비활성화
+    resultMessage.style.display = 'none';
+  }
 });
