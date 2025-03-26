@@ -515,3 +515,66 @@ button:active {
 #check-button {
   padding: 0.7rem 2rem;
 }
+
+/* 흔들림 애니메이션 정의 */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+/* 흔들림 효과를 적용할 클래스 */
+.shake {
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 시간 초과 팝업 스타일 */
+#timeout-popup .popup-content {
+  background-color: rgba(255, 242, 221, 0.95);
+  border: 3px solid #e67e22;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: popup-fade 0.3s ease-out;
+}
+
+#timeout-popup h2 {
+  color: #d35400;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+#timeout-popup p {
+  color: #333;
+  font-size: 1.2rem;
+}
+
+/* 팝업 애니메이션 */
+@keyframes popup-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
