@@ -82,4 +82,47 @@ const sentenceData = {
       },
     },
   ],
+
+  day2: [
+    {
+      id: 'sentence1',
+      level: 1,
+      isFinal: false,
+      korean: '아침에',
+      chinese: {
+        hanzi: ['早', '上'],
+        pinyin: ['zǎo', 'shang'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 2,
+      isFinal: true,
+      korean: '나는 아침에 운동한다',
+      chinese: {
+        hanzi: ['我', '早', '上', '锻炼'],
+        pinyin: ['wǒ', 'zǎo', 'shang', 'duànliàn'],
+      },
+    },
+    {
+      id: 'sentence2',
+      level: 1,
+      isFinal: false,
+      korean: '중국어를 공부하다',
+      chinese: {
+        hanzi: ['学习', '中文'],
+        pinyin: ['xuéxí', 'zhōngwén'],
+      },
+    },
+    {
+      id: 'sentence2',
+      level: 2,
+      isFinal: true,
+      korean: '나는 매일 중국어를 공부한다',
+      chinese: {
+        hanzi: ['我', '每天', '学习', '中文'],
+        pinyin: ['wǒ', 'měitiān', 'xuéxí', 'zhōngwén'],
+      },
+    },
+  ],
 };
