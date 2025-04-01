@@ -11,525 +11,1018 @@
 
 const sentenceData = {
   day1: [
+    // 문장1 묶음 (1~5)
+    {
+      id: 'sentence1',
+      level: 1,
+      isFinal: false,
+      korean: '계획하다',
+      chinese: {
+        hanzi: ['安排'],
+        pinyin: ['ānpái'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 2,
+      isFinal: false,
+      korean: '있다',
+      chinese: {
+        hanzi: ['有'],
+        pinyin: ['yǒu'],
+      },
+    },
     {
       id: 'sentence1',
       level: 3,
-      isFinal: true,
-      korean: '나는 등산하러 갈 예정이다.',
+      isFinal: false,
+      korean: '계획이 있다',
       chinese: {
-        hanzi: ['我', '打算', '去', '爬山'],
-        pinyin: ['wǒ', 'dǎsuàn', 'qù', 'páshān'],
+        hanzi: ['有', '安排'],
+        pinyin: ['yǒu', 'ānpái'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 4,
+      isFinal: false,
+      korean: '무슨 계획?',
+      chinese: {
+        hanzi: ['什么', '安排'],
+        pinyin: ['shénme', 'ānpái'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 5,
+      isFinal: true,
+      korean: '너는 무슨 계획이 있니?',
+      chinese: {
+        hanzi: ['你', '有', '什么', '安排'],
+        pinyin: ['nǐ', 'yǒu', 'shénme', 'ānpái'],
+      },
+    },
+
+    // 문장2 묶음 (6~7)
+    {
+      id: 'sentence2',
+      level: 1,
+      isFinal: false,
+      korean: '주말',
+      chinese: {
+        hanzi: ['周末'],
+        pinyin: ['zhōumò'],
       },
     },
     {
       id: 'sentence2',
-      level: 3,
+      level: 2,
       isFinal: true,
-      korean: '고마워요, 제가 혼자 할 수 있어요.',
+      korean: '너는 주말에 무슨 계획이 있니?',
       chinese: {
-        hanzi: ['谢谢', '我', '自己', '可以'],
-        pinyin: ['xièxie', 'wǒ', 'zìjǐ', 'kěyǐ'],
+        hanzi: ['你', '周末', '有', '什么', '安排'],
+        pinyin: ['nǐ', 'zhōumò', 'yǒu', 'shénme', 'ānpái'],
+      },
+    },
+
+    // 문장3 묶음 (8~9)
+    {
+      id: 'sentence3',
+      level: 1,
+      isFinal: false,
+      korean: '필요하다',
+      chinese: {
+        hanzi: ['需要'],
+        pinyin: ['xūyào'],
       },
     },
     {
       id: 'sentence3',
-      level: 3,
+      level: 2,
       isFinal: true,
-      korean: '저는 이게 더 좋은 것 같아요.',
+      korean: '나는 필요하다',
       chinese: {
-        hanzi: ['我', '觉得', '这个', '比较', '好'],
-        pinyin: ['wǒ', 'juéde', 'zhège', 'bǐjiào', 'hǎo'],
+        hanzi: ['我', '需要'],
+        pinyin: ['wǒ', 'xūyào'],
+      },
+    },
+
+    // 문장4 묶음 (10~13)
+    {
+      id: 'sentence4',
+      level: 1,
+      isFinal: false,
+      korean: '도움',
+      chinese: {
+        hanzi: ['帮助'],
+        pinyin: ['bāngzhù'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 2,
+      isFinal: false,
+      korean: '도움이 필요하다',
+      chinese: {
+        hanzi: ['需要', '帮助'],
+        pinyin: ['xūyào', 'bāngzhù'],
       },
     },
     {
       id: 'sentence4',
       level: 3,
-      isFinal: true,
-      korean: '봤어요, 정말 너무 멋졌어요!',
+      isFinal: false,
+      korean: '나는 도움이 필요하다',
       chinese: {
-        hanzi: ['看了', '真是', '太', '精彩了'],
-        pinyin: ['kànle', 'zhēnshì', 'tài', 'jīngcǎile'],
+        hanzi: ['我', '需要', '帮助'],
+        pinyin: ['wǒ', 'xūyào', 'bāngzhù'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 4,
+      isFinal: true,
+      korean: '너는 도움이 필요하니?',
+      chinese: {
+        hanzi: ['你', '需要', '帮助', '吗'],
+        pinyin: ['nǐ', 'xūyào', 'bāngzhù', 'ma'],
+      },
+    },
+
+    // 문장5 묶음 (14~17)
+    {
+      id: 'sentence5',
+      level: 1,
+      isFinal: false,
+      korean: '비교하다',
+      chinese: {
+        hanzi: ['比较'],
+        pinyin: ['bǐjiào'],
+      },
+    },
+    {
+      id: 'sentence5',
+      level: 2,
+      isFinal: false,
+      korean: '더 좋다',
+      chinese: {
+        hanzi: ['比较', '好'],
+        pinyin: ['bǐjiào', 'hǎo'],
       },
     },
     {
       id: 'sentence5',
       level: 3,
-      isFinal: true,
-      korean: 'JD에서 샀어요. (=징둥)',
+      isFinal: false,
+      korean: '어느 것',
       chinese: {
-        hanzi: ['在', '京东', '买的'],
-        pinyin: ['zài', 'jīngdōng', 'mǎide'],
+        hanzi: ['哪个'],
+        pinyin: ['nǎge'],
+      },
+    },
+    {
+      id: 'sentence5',
+      level: 4,
+      isFinal: true,
+      korean: '어느 것이 더 좋아?',
+      chinese: {
+        hanzi: ['哪个', '比较', '好'],
+        pinyin: ['nǎge', 'bǐjiào', 'hǎo'],
+      },
+    },
+
+    // 문장6 묶음 (18~21)
+    {
+      id: 'sentence6',
+      level: 1,
+      isFinal: false,
+      korean: '이 두 개의 휴대폰',
+      chinese: {
+        hanzi: ['这两个', '手机'],
+        pinyin: ['zhè liǎng ge', 'shǒujī'],
+      },
+    },
+    {
+      id: 'sentence6',
+      level: 2,
+      isFinal: false,
+      korean: '이 두 개의 휴대폰 중 어느 것이 더 좋아?',
+      chinese: {
+        hanzi: ['这两个', '手机', '哪个', '比较', '好'],
+        pinyin: ['zhè liǎng ge', 'shǒujī', 'nǎge', 'bǐjiào', 'hǎo'],
       },
     },
     {
       id: 'sentence6',
       level: 3,
-      isFinal: true,
-      korean: '없어요, 마시고 싶으면 사러 가야 해요.',
+      isFinal: false,
+      korean: '너는 생각한다',
       chinese: {
-        hanzi: ['没有了', '想', '喝的话', '得', '去', '买'],
-        pinyin: ['méiyǒule', 'xiǎng', 'hēdehuà', 'děi', 'qù', 'mǎi'],
+        hanzi: ['你', '觉得'],
+        pinyin: ['nǐ', 'juéde'],
+      },
+    },
+    {
+      id: 'sentence6',
+      level: 4,
+      isFinal: true,
+      korean: '너는 이 두 개의 휴대폰 중 어느 것이 더 좋다고 생각해?',
+      chinese: {
+        hanzi: ['你', '觉得', '这两个', '手机', '哪个', '比较', '好'],
+        pinyin: [
+          'nǐ',
+          'juéde',
+          'zhè liǎng ge',
+          'shǒujī',
+          'nǎge',
+          'bǐjiào',
+          'hǎo',
+        ],
+      },
+    },
+
+    // 문장7 묶음 (22~26)
+    {
+      id: 'sentence7',
+      level: 1,
+      isFinal: false,
+      korean: '보다',
+      chinese: {
+        hanzi: ['看'],
+        pinyin: ['kàn'],
+      },
+    },
+    {
+      id: 'sentence7',
+      level: 2,
+      isFinal: false,
+      korean: '봤다',
+      chinese: {
+        hanzi: ['看', '了'],
+        pinyin: ['kàn', 'le'],
       },
     },
     {
       id: 'sentence7',
       level: 3,
-      isFinal: true,
-      korean: '정말 대단해요!',
+      isFinal: false,
+      korean: '안 봤다',
       chinese: {
-        hanzi: ['真', '厉害'],
-        pinyin: ['zhēn', 'lìhài'],
+        hanzi: ['没', '看'],
+        pinyin: ['méi', 'kàn'],
+      },
+    },
+    {
+      id: 'sentence7',
+      level: 4,
+      isFinal: false,
+      korean: '봤어?',
+      chinese: {
+        hanzi: ['看', '了', '吗'],
+        pinyin: ['kàn', 'le', 'ma'],
+      },
+    },
+    {
+      id: 'sentence7',
+      level: 5,
+      isFinal: true,
+      korean: '안 봤어?',
+      chinese: {
+        hanzi: ['没', '看', '吗'],
+        pinyin: ['méi', 'kàn', 'ma'],
+      },
+    },
+
+    // 문장8 묶음 (27~30)
+    {
+      id: 'sentence8',
+      level: 1,
+      isFinal: false,
+      korean: '어제 경기',
+      chinese: {
+        hanzi: ['昨天', '的', '比赛'],
+        pinyin: ['zuótiān', 'de', 'bǐsài'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 2,
+      isFinal: false,
+      korean: '어제 경기를 봤다',
+      chinese: {
+        hanzi: ['看', '了', '昨天', '的', '比赛'],
+        pinyin: ['kàn', 'le', 'zuótiān', 'de', 'bǐsài'],
       },
     },
     {
       id: 'sentence8',
       level: 3,
-      isFinal: true,
-      korean: '와, 다 맛있어 보여요.',
+      isFinal: false,
+      korean: '너는 어제 경기를 봤니?',
       chinese: {
-        hanzi: ['哇', '看起来', '都', '很', '好吃'],
-        pinyin: ['wa', 'kànqǐlái', 'dōu', 'hěn', 'hǎochī'],
+        hanzi: ['你', '看', '了', '昨天的', '比赛', '吗'],
+        pinyin: ['nǐ', 'kàn', 'le', 'zuótiān', 'de', 'bǐsài', 'ma'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 4,
+      isFinal: true,
+      korean: '어제 경기, 너는 봤니?',
+      chinese: {
+        hanzi: ['昨天', '的', '比赛', '，', '你', '看', '了', '吗'],
+        pinyin: ['zuótiān', 'de', 'bǐsài', ',', 'nǐ', 'kàn', 'le', 'ma'],
+      },
+    },
+
+    // 문장9 묶음 (31~34)
+    {
+      id: 'sentence9',
+      level: 1,
+      isFinal: false,
+      korean: '어디',
+      chinese: {
+        hanzi: ['哪里'],
+        pinyin: ['nǎli'],
+      },
+    },
+    {
+      id: 'sentence9',
+      level: 2,
+      isFinal: false,
+      korean: '어디에',
+      chinese: {
+        hanzi: ['在', '哪里'],
+        pinyin: ['zài', 'nǎli'],
       },
     },
     {
       id: 'sentence9',
       level: 3,
-      isFinal: true,
-      korean: '참가해요, 이미 신청했어요.',
+      isFinal: false,
+      korean: '사다',
       chinese: {
-        hanzi: ['参加', '我', '已经', '报名了'],
-        pinyin: ['cānjiā', 'wǒ', 'yǐjīng', 'bàomíngle'],
+        hanzi: ['买'],
+        pinyin: ['mǎi'],
+      },
+    },
+    {
+      id: 'sentence9',
+      level: 4,
+      isFinal: true,
+      korean: '어디에서 사?',
+      chinese: {
+        hanzi: ['在', '哪里', '买'],
+        pinyin: ['zài', 'nǎli', 'mǎi'],
+      },
+    },
+
+    // 문장10 묶음 (35~39)
+    {
+      id: 'sentence10',
+      level: 1,
+      isFinal: false,
+      korean:
+        '과거에 ‘언제’, ’어디서‘, ’누구랑‘, ’어떻게‘를 강조해주는 장치!, Ex) A: 너 어디에서 샀어? B: 다이소에서 샀어 -> ‘다이소’에서 강조!',
+      chinese: {
+        hanzi: ['是......的'],
+        pinyin: ['shì......de'],
+      },
+    },
+    {
+      id: 'sentence10',
+      level: 2,
+      isFinal: false,
+      korean: '어디에서 산 거야?',
+      chinese: {
+        hanzi: ['是', '在', '哪里', '买', '的'],
+        pinyin: ['shì', 'zài', 'nǎli', 'mǎi', 'de'],
       },
     },
     {
       id: 'sentence10',
       level: 3,
-      isFinal: true,
-      korean: '고마워요, 그는 열심히 공부해요.',
+      isFinal: false,
+      korean: '노트북',
       chinese: {
-        hanzi: ['谢谢', '他', '学习', '很', '努力'],
-        pinyin: ['xièxie', 'tā', 'xuéxí', 'hěn', 'nǔlì'],
+        hanzi: ['笔记本'],
+        pinyin: ['bǐjìběn'],
+      },
+    },
+    {
+      id: 'sentence10',
+      level: 4,
+      isFinal: false,
+      korean: '너의 노트북',
+      chinese: {
+        hanzi: ['你', '的', '笔记本'],
+        pinyin: ['nǐ', 'de', 'bǐjìběn'],
+      },
+    },
+    {
+      id: 'sentence10',
+      level: 5,
+      isFinal: true,
+      korean: '너의 노트북은 어디에서 산 거야?',
+      chinese: {
+        hanzi: ['你', '的', '笔记本', '是', '在', '哪里', '买', '的'],
+        pinyin: ['nǐ', 'de', 'bǐjìběn', 'shì', 'zài', 'nǎli', 'mǎi', 'de'],
       },
     },
   ],
 
   day2: [
+    // 문장11 묶음 (40~44)
+    {
+      id: 'sentence1',
+      level: 1,
+      isFinal: false,
+      korean: '우유',
+      chinese: {
+        hanzi: ['牛奶'],
+        pinyin: ['niúnǎi'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 2,
+      isFinal: false,
+      korean: '우유가 있다',
+      chinese: {
+        hanzi: ['有', '牛奶'],
+        pinyin: ['yǒu', 'niúnǎi'],
+      },
+    },
     {
       id: 'sentence1',
       level: 3,
-      isFinal: true,
-      korean: '청소했어요, 지금 아주 깨끗해요.',
+      isFinal: false,
+      korean: '아직',
       chinese: {
-        hanzi: ['打扫了', '现在', '很', '干净'],
-        pinyin: ['dǎsǎole', 'xiànzài', 'hěn', 'gānjìng'],
+        hanzi: ['还'],
+        pinyin: ['hái'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 4,
+      isFinal: false,
+      korean: '아직 있다',
+      chinese: {
+        hanzi: ['还', '有'],
+        pinyin: ['hái', 'yǒu'],
+      },
+    },
+    {
+      id: 'sentence1',
+      level: 5,
+      isFinal: true,
+      korean: '우유가 아직 있다',
+      chinese: {
+        hanzi: ['还', '有', '牛奶'],
+        pinyin: ['hái', 'yǒu', 'niúnǎi'],
+      },
+    },
+
+    // 문장12 묶음 (45~48)
+    {
+      id: 'sentence2',
+      level: 1,
+      isFinal: false,
+      korean: '냉장고 안에',
+      chinese: {
+        hanzi: ['冰箱', '里'],
+        pinyin: ['bīngxiāng', 'lǐ'],
+      },
+    },
+    {
+      id: 'sentence2',
+      level: 2,
+      isFinal: false,
+      korean: '냉장고 안에 우유가 있다',
+      chinese: {
+        hanzi: ['冰箱', '里', '有', '牛奶'],
+        pinyin: ['bīngxiāng', 'lǐ', 'yǒu', 'niúnǎi'],
       },
     },
     {
       id: 'sentence2',
       level: 3,
-      isFinal: true,
-      korean: '나는 여행 갈 예정이에요.',
+      isFinal: false,
+      korean: '냉장고 안에 우유가 있니?',
       chinese: {
-        hanzi: ['我', '打算', '去', '旅行'],
-        pinyin: ['wǒ', 'dǎsuàn', 'qù', 'lǚxíng'],
+        hanzi: ['冰箱', '里', '有', '牛奶', '吗'],
+        pinyin: ['bīngxiāng', 'lǐ', 'yǒu', 'niúnǎi', 'ma'],
+      },
+    },
+    {
+      id: 'sentence2',
+      level: 4,
+      isFinal: true,
+      korean: '냉장고 안에 우유가 아직 있니?',
+      chinese: {
+        hanzi: ['冰箱', '里', '还', '有', '牛奶', '吗'],
+        pinyin: ['bīngxiāng', 'lǐ', 'hái', 'yǒu', 'niúnǎi', 'ma'],
+      },
+    },
+
+    // 문장13 묶음 (49~53)
+    {
+      id: 'sentence3',
+      level: 1,
+      isFinal: false,
+      korean: '중국어',
+      chinese: {
+        hanzi: ['汉语'],
+        pinyin: ['hànyǔ'],
+      },
+    },
+    {
+      id: 'sentence3',
+      level: 2,
+      isFinal: false,
+      korean: '중국어를 말하다',
+      chinese: {
+        hanzi: ['说', '汉语'],
+        pinyin: ['shuō', 'hànyǔ'],
       },
     },
     {
       id: 'sentence3',
       level: 3,
-      isFinal: true,
-      korean: '저는 지하철을 타고 가요.',
+      isFinal: false,
+      korean: '할 수 있다',
       chinese: {
-        hanzi: ['我', '坐', '地铁', '去'],
-        pinyin: ['wǒ', 'zuò', 'dìtiě', 'qù'],
+        hanzi: ['会'],
+        pinyin: ['huì'],
+      },
+    },
+    {
+      id: 'sentence3',
+      level: 4,
+      isFinal: false,
+      korean: '중국어를 할 수 있다',
+      chinese: {
+        hanzi: ['会', '说', '汉语'],
+        pinyin: ['huì', 'shuō', 'hànyǔ'],
+      },
+    },
+    {
+      id: 'sentence3',
+      level: 5,
+      isFinal: true,
+      korean: '그는 중국어를 할 수 있다',
+      chinese: {
+        hanzi: ['他', '会', '说', '汉语'],
+        pinyin: ['tā', 'huì', 'shuō', 'hànyǔ'],
+      },
+    },
+
+    // 문장14 묶음 (54~61)
+    {
+      id: 'sentence4',
+      level: 1,
+      isFinal: false,
+      korean: '~뿐만 아니라',
+      chinese: {
+        hanzi: ['不但'],
+        pinyin: ['bùdàn'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 2,
+      isFinal: false,
+      korean: '중국어를 할 수 있을 뿐만 아니라',
+      chinese: {
+        hanzi: ['不但', '会', '说', '汉语'],
+        pinyin: ['bùdàn', 'huì', 'shuō', 'hànyǔ'],
       },
     },
     {
       id: 'sentence4',
       level: 3,
-      isFinal: true,
-      korean: '받았어요, 그런데 지금 일이 있어서 조금 있다가 답장할게요.',
+      isFinal: false,
+      korean: '그는 중국어를 할 수 있을 뿐만 아니라',
       chinese: {
-        hanzi: ['收到了', '但是', '我', '现在', '有事', '一会', '回', '你'],
+        hanzi: ['他', '不但', '会', '说', '汉语'],
+        pinyin: ['tā', 'bùdàn', 'huì', 'shuō', 'hànyǔ'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 4,
+      isFinal: false,
+      korean: '일본어를 말하다',
+      chinese: {
+        hanzi: ['说', '日语'],
+        pinyin: ['shuō', 'rìyǔ'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 5,
+      isFinal: false,
+      korean: '일본어를 할 수 있다',
+      chinese: {
+        hanzi: ['会', '说', '日语'],
+        pinyin: ['huì', 'shuō', 'rìyǔ'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 6,
+      isFinal: false,
+      korean: '~뿐만 아니라, ~도',
+      chinese: {
+        hanzi: ['不但......', '还'],
+        pinyin: ['bùdàn......', 'hái'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 7,
+      isFinal: false,
+      korean: '~뿐만 아니라, 일본어도 할 수 있다',
+      chinese: {
+        hanzi: ['不但......', '还', '会', '说', '日语'],
+        pinyin: ['bùdàn......', 'hái', 'huì', 'shuō', 'rìyǔ'],
+      },
+    },
+    {
+      id: 'sentence4',
+      level: 8,
+      isFinal: true,
+      korean: '그는 중국어를 할 수 있을 뿐만 아니라, 일본어도 할 수 있다',
+      chinese: {
+        hanzi: [
+          '他',
+          '不但',
+          '会',
+          '说',
+          '汉语',
+          '，',
+          '还',
+          '会',
+          '说',
+          '日语',
+        ],
         pinyin: [
-          'shōudàole',
-          'dànshì',
-          'wǒ',
-          'xiànzài',
-          'yǒushì',
-          'yīhuì',
-          'huí',
-          'nǐ',
+          'tā',
+          'bùdàn',
+          'huì',
+          'shuō',
+          'hànyǔ',
+          ',',
+          'hái',
+          'huì',
+          'shuō',
+          'rìyǔ',
         ],
       },
     },
-    {
-      id: 'sentence5',
-      level: 3,
-      isFinal: true,
-      korean: '좋아요, 오랜만에 가는 거네요.',
-      chinese: {
-        hanzi: ['好啊', '我', '很久', '没去了'],
-        pinyin: ['hǎoa', 'wǒ', 'hěnjiǔ', 'méiqùle'],
-      },
-    },
-    {
-      id: 'sentence6',
-      level: 3,
-      isFinal: true,
-      korean: '네, 저는 매일 아침 조깅해요.',
-      chinese: {
-        hanzi: ['是的', '我', '每天', '早上', '跑步'],
-        pinyin: ['shìde', 'wǒ', 'měitiān', 'zǎoshang', 'pǎobù'],
-      },
-    },
-    {
-      id: 'sentence7',
-      level: 3,
-      isFinal: true,
-      korean: '아주 편리해요, 지하철역에서 가까워요.',
-      chinese: {
-        hanzi: ['很', '方便', '离', '地铁站', '很', '近'],
-        pinyin: ['hěn', 'fāngbiàn', 'lí', 'dìtiězhàn', 'hěn', 'jìn'],
-      },
-    },
-    {
-      id: 'sentence8',
-      level: 3,
-      isFinal: true,
-      korean: '있어요, 바로 앞에 있어요.',
-      chinese: {
-        hanzi: ['有', '就', '在', '前面'],
-        pinyin: ['yǒu', 'jiù', 'zài', 'qiánmiàn'],
-      },
-    },
-    {
-      id: 'sentence9',
-      level: 3,
-      isFinal: true,
-      korean: '감기에 걸려서 좀 불편해요.',
-      chinese: {
-        hanzi: ['我', '感冒了', '有点', '不舒服'],
-        pinyin: ['wǒ', 'gǎnmàole', 'yǒudiǎn', 'bùshūfu'],
-      },
-    },
-    {
-      id: 'sentence10',
-      level: 3,
-      isFinal: true,
-      korean: '좋아요, 날씨가 아주 좋아요.',
-      chinese: {
-        hanzi: ['好啊', '天气', '很', '好'],
-        pinyin: ['hǎoa', 'tiānqì', 'hěn', 'hǎo'],
-      },
-    },
-  ],
 
-  day3: [
+    // 문장15 묶음 (62~67)
     {
-      id: 'sentence1',
-      level: 3,
-      isFinal: true,
-      korean: '응응, 우리 다 알아볼 수 있어요.',
+      id: 'sentence5',
+      level: 1,
+      isFinal: false,
+      korean: '보다',
       chinese: {
-        hanzi: ['嗯嗯', '我们', '都', '看得出来'],
-        pinyin: ['ènèn', 'wǒmen', 'dōu', 'kàndechūlái'],
+        hanzi: ['看'],
+        pinyin: ['kàn'],
       },
     },
     {
-      id: 'sentence2',
-      level: 3,
-      isFinal: true,
-      korean: '조금 무서워요.',
+      id: 'sentence5',
+      level: 2,
+      isFinal: false,
+      korean: '~좀',
       chinese: {
-        hanzi: ['有点', '害怕'],
-        pinyin: ['yǒudiǎn', 'hàipà'],
-      },
-    },
-    {
-      id: 'sentence3',
-      level: 3,
-      isFinal: true,
-      korean: '후회하지 않아요, 저는 아주 좋아해요.',
-      chinese: {
-        hanzi: ['不', '后悔', '我', '很', '喜欢'],
-        pinyin: ['bù', 'hòuhuǐ', 'wǒ', 'hěn', 'xǐhuan'],
-      },
-    },
-    {
-      id: 'sentence4',
-      level: 3,
-      isFinal: true,
-      korean: '맞아요, 아주 조용해요.',
-      chinese: {
-        hanzi: ['是啊', '很', '安静'],
-        pinyin: ['shìa', 'hěn', 'ānjìng'],
+        hanzi: ['一下'],
+        pinyin: ['yīxià'],
       },
     },
     {
       id: 'sentence5',
       level: 3,
-      isFinal: true,
-      korean: '일어나서 몸을 좀 움직이세요.',
+      isFinal: false,
+      korean: '좀 보다',
       chinese: {
-        hanzi: ['起来', '活动', '活动'],
-        pinyin: ['qǐlái', 'huódòng', 'huódòng'],
+        hanzi: ['看', '一下'],
+        pinyin: ['kàn', 'yīxià'],
       },
     },
     {
-      id: 'sentence6',
-      level: 3,
-      isFinal: true,
-      korean: '맞아요, 저는 다 할 수 있어요.',
+      id: 'sentence5',
+      level: 4,
+      isFinal: false,
+      korean: '메뉴',
       chinese: {
-        hanzi: ['是啊', '我', '都', '会', '做'],
-        pinyin: ['shìa', 'wǒ', 'dōu', 'huì', 'zuò'],
+        hanzi: ['菜单'],
+        pinyin: ['càidān'],
       },
     },
     {
-      id: 'sentence7',
-      level: 3,
-      isFinal: true,
-      korean: '검사했어요, 문제없어요.',
+      id: 'sentence5',
+      level: 5,
+      isFinal: false,
+      korean: '메뉴를 좀 보다',
       chinese: {
-        hanzi: ['检查了', '没有', '问题'],
-        pinyin: ['jiǎnchále', 'méiyǒu', 'wèntí'],
+        hanzi: ['看', '一下', '菜单'],
+        pinyin: ['kàn', 'yīxià', 'càidān'],
       },
     },
     {
-      id: 'sentence8',
-      level: 3,
+      id: 'sentence5',
+      level: 6,
       isFinal: true,
-      korean: '맞아요, 건강이 제일 중요해요.',
+      korean: '메뉴를 좀 보자',
       chinese: {
-        hanzi: ['没错', '身体', '是', '革命', '的', '本钱'],
-        pinyin: ['méicuò', 'shēntǐ', 'shì', 'gémìng', 'de', 'běnqián'],
+        hanzi: ['来', '看', '一下', '菜单'],
+        pinyin: ['lái', 'kàn', 'yīxià', 'càidān'],
       },
     },
-    {
-      id: 'sentence9',
-      level: 3,
-      isFinal: true,
-      korean: '네, 저는 매번 긴장돼요.',
-      chinese: {
-        hanzi: ['会', '我', '每次', '都', '很', '紧张'],
-        pinyin: ['huì', 'wǒ', 'měicì', 'dōu', 'hěn', 'jǐnzhāng'],
-      },
-    },
-    {
-      id: 'sentence10',
-      level: 3,
-      isFinal: true,
-      korean: '맞아요, 출근할 때 지나가요.',
-      chinese: {
-        hanzi: ['对', '我', '上班', '的', '时候', '会', '路过'],
-        pinyin: ['duì', 'wǒ', 'shàngbān', 'de', 'shíhou', 'huì', 'lùguò'],
-      },
-    },
-  ],
 
-  day4: [
+    // 문장16 묶음 (68~77)
     {
-      id: 'sentence1',
-      level: 3,
-      isFinal: true,
-      korean: '없어요, 나갔어요.',
+      id: 'sentence6',
+      level: 1,
+      isFinal: false,
+      korean: '먹다',
       chinese: {
-        hanzi: ['不在', '他', '出去了'],
-        pinyin: ['bùzài', 'tā', 'chūqùle'],
+        hanzi: ['吃'],
+        pinyin: ['chī'],
       },
     },
     {
-      id: 'sentence2',
-      level: 3,
-      isFinal: true,
-      korean: '아이구, 고마워요!',
+      id: 'sentence6',
+      level: 2,
+      isFinal: false,
+      korean: '~하고 싶다',
       chinese: {
-        hanzi: ['哎呀', '谢谢'],
-        pinyin: ['āiya', 'xièxie'],
-      },
-    },
-    {
-      id: 'sentence3',
-      level: 3,
-      isFinal: true,
-      korean: '내일 아침이요.',
-      chinese: {
-        hanzi: ['明天', '早上'],
-        pinyin: ['míngtiān', 'zǎoshang'],
-      },
-    },
-    {
-      id: 'sentence4',
-      level: 3,
-      isFinal: true,
-      korean: '맞아요, 모두가 그를 좋아해요.',
-      chinese: {
-        hanzi: ['是啊', '大家', '都', '喜欢', '他'],
-        pinyin: ['shìa', 'dàjiā', 'dōu', 'xǐhuan', 'tā'],
-      },
-    },
-    {
-      id: 'sentence5',
-      level: 3,
-      isFinal: true,
-      korean: '관심 있어요, 저는 역사책을 자주 봐요.',
-      chinese: {
-        hanzi: ['感兴趣', '我', '经常', '看', '历史书'],
-        pinyin: ['gǎnxìngqù', 'wǒ', 'jīngcháng', 'kàn', 'lìshǐshū'],
+        hanzi: ['想'],
+        pinyin: ['xiǎng'],
       },
     },
     {
       id: 'sentence6',
       level: 3,
-      isFinal: true,
-      korean: '없어요, 감사합니다.',
+      isFinal: false,
+      korean: '먹고 싶다',
       chinese: {
-        hanzi: ['没有了', '谢谢'],
-        pinyin: ['méiyǒule', 'xièxie'],
+        hanzi: ['想', '吃'],
+        pinyin: ['xiǎng', 'chī'],
       },
     },
     {
-      id: 'sentence7',
-      level: 3,
-      isFinal: true,
-      korean: '네, 저는 운남(윈난)에 갈 예정이에요.',
+      id: 'sentence6',
+      level: 4,
+      isFinal: false,
+      korean: '요리를 먹고 싶다',
       chinese: {
-        hanzi: ['是的', '我', '打算', '去', '云南'],
-        pinyin: ['shìde', 'wǒ', 'dǎsuàn', 'qù', 'yúnnán'],
+        hanzi: ['想', '吃', '菜'],
+        pinyin: ['xiǎng', 'chī', 'cài'],
       },
     },
     {
-      id: 'sentence8',
-      level: 3,
-      isFinal: true,
-      korean: '욕실 안에 있어요.',
+      id: 'sentence6',
+      level: 5,
+      isFinal: false,
+      korean: '어느',
       chinese: {
-        hanzi: ['在', '浴室', '里'],
-        pinyin: ['zài', 'yùshì', 'lǐ'],
+        hanzi: ['哪'],
+        pinyin: ['nǎ'],
       },
     },
     {
-      id: 'sentence9',
-      level: 3,
-      isFinal: true,
-      korean: '저는 중국어를 배우러 왔어요.',
+      id: 'sentence6',
+      level: 6,
+      isFinal: false,
+      korean: '어떤 것들',
       chinese: {
-        hanzi: ['我', '来', '学习', '中文'],
-        pinyin: ['wǒ', 'lái', 'xuéxí', 'zhōngwén'],
+        hanzi: ['哪些'],
+        pinyin: ['nǎxiē'],
       },
     },
     {
-      id: 'sentence10',
-      level: 3,
-      isFinal: true,
-      korean: '좋아요, 오랜만에 운동하네요.',
+      id: 'sentence6',
+      level: 7,
+      isFinal: false,
+      korean: '어떤 요리들',
       chinese: {
-        hanzi: ['好啊', '我', '很久', '没', '运动', '了'],
-        pinyin: ['hǎoa', 'wǒ', 'hěnjiǔ', 'méi', 'yùndòng', 'le'],
+        hanzi: ['哪些', '菜'],
+        pinyin: ['nǎxiē', 'cài'],
       },
     },
-  ],
+    {
+      id: 'sentence6',
+      level: 8,
+      isFinal: false,
+      korean: '어떤 요리들을 먹고 싶어?',
+      chinese: {
+        hanzi: ['想', '吃', '哪些', '菜'],
+        pinyin: ['xiǎng', 'chī', 'nǎxiē', 'cài'],
+      },
+    },
+    {
+      id: 'sentence6',
+      level: 9,
+      isFinal: false,
+      korean: '너는 어떤 요리들을 먹고 싶어?',
+      chinese: {
+        hanzi: ['你', '想', '吃', '哪些', '菜'],
+        pinyin: ['nǐ', 'xiǎng', 'chī', 'nǎxiē', 'cài'],
+      },
+    },
+    {
+      id: 'sentence6',
+      level: 10,
+      isFinal: true,
+      korean: '메뉴를 좀 보자, 너는 어떤 요리들을 먹고 싶어?',
+      chinese: {
+        hanzi: [
+          '来',
+          '看',
+          '一下',
+          '菜单',
+          '，',
+          '你',
+          '想',
+          '吃',
+          '哪些',
+          '菜',
+        ],
+        pinyin: [
+          'lái',
+          'kàn',
+          'yīxià',
+          'càidān',
+          ',',
+          'nǐ',
+          'xiǎng',
+          'chī',
+          'nǎxiē',
+          'cài',
+        ],
+      },
+    },
 
-  day5: [
+    // 문장17 묶음 (78~79)
     {
-      id: 'sentence1',
-      level: 3,
-      isFinal: true,
-      korean: '좋아해요, 특히 청록색을요.',
+      id: 'sentence7',
+      level: 1,
+      isFinal: false,
+      korean: '참가하다',
       chinese: {
-        hanzi: ['喜欢', '特别是', '青色', '的'],
-        pinyin: ['xǐhuan', 'tèbiéshì', 'qīngsè', 'de'],
-      },
-    },
-    {
-      id: 'sentence2',
-      level: 3,
-      isFinal: true,
-      korean: '없어요, 감사합니다.',
-      chinese: {
-        hanzi: ['没有了', '谢谢'],
-        pinyin: ['méiyǒule', 'xièxie'],
-      },
-    },
-    {
-      id: 'sentence3',
-      level: 3,
-      isFinal: true,
-      korean: '맞아요, 그는 평소에는 이러지 않아요.',
-      chinese: {
-        hanzi: ['是啊', '他', '平时', '不', '这样'],
-        pinyin: ['shìa', 'tā', 'píngshí', 'bù', 'zhèyàng'],
-      },
-    },
-    {
-      id: 'sentence4',
-      level: 3,
-      isFinal: true,
-      korean: '알겠어요, 다시 한 번 설명할게요.',
-      chinese: {
-        hanzi: ['好的', '我', '再', '解释', '一遍'],
-        pinyin: ['hǎode', 'wǒ', 'zài', 'jiěshì', 'yībiàn'],
-      },
-    },
-    {
-      id: 'sentence5',
-      level: 3,
-      isFinal: true,
-      korean: '만약 비가 오면, 우리는 가지 않을 거예요.',
-      chinese: {
-        hanzi: ['如果', '下雨', '我们', '就', '不', '去', '了'],
-        pinyin: ['rúguǒ', 'xiàyǔ', 'wǒmen', 'jiù', 'bù', 'qù', 'le'],
-      },
-    },
-    {
-      id: 'sentence6',
-      level: 3,
-      isFinal: true,
-      korean: '그가 늦었기 때문이에요.',
-      chinese: {
-        hanzi: ['因为', '他', '迟到', '了'],
-        pinyin: ['yīnwèi', 'tā', 'chídào', 'le'],
+        hanzi: ['参加'],
+        pinyin: ['cānjiā'],
       },
     },
     {
       id: 'sentence7',
-      level: 3,
+      level: 2,
       isFinal: true,
-      korean: '가고 싶어요, 저는 여러 나라에 가고 싶어요.',
+      korean: '너는 참가하니?',
       chinese: {
-        hanzi: ['想', '我', '想', '去', '很多', '国家'],
-        pinyin: ['xiǎng', 'wǒ', 'xiǎng', 'qù', 'hěnduō', 'guójiā'],
+        hanzi: ['你', '参加', '吗'],
+        pinyin: ['nǐ', 'cānjiā', 'ma'],
+      },
+    },
+
+    // 문장18 묶음 (80~86)
+    {
+      id: 'sentence8',
+      level: 1,
+      isFinal: false,
+      korean: '활동',
+      chinese: {
+        hanzi: ['活动'],
+        pinyin: ['huódòng'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 2,
+      isFinal: false,
+      korean: '내일의',
+      chinese: {
+        hanzi: ['明天的'],
+        pinyin: ['míngtiān de'],
       },
     },
     {
       id: 'sentence8',
       level: 3,
-      isFinal: true,
-      korean: '맞아요, 요리사가 정말 솜씨가 좋아요.',
+      isFinal: false,
+      korean: '내일의 활동',
       chinese: {
-        hanzi: ['是啊', '厨师', '手艺', '真', '好'],
-        pinyin: ['shìa', 'chúshī', 'shǒuyì', 'zhēn', 'hǎo'],
+        hanzi: ['明天的', '活动'],
+        pinyin: ['míngtiān de', 'huódòng'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 4,
+      isFinal: false,
+      korean: '내일의 활동에 참가하다',
+      chinese: {
+        hanzi: ['参加', '明天的', '活动'],
+        pinyin: ['cānjiā', 'míngtiān de', 'huódòng'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 5,
+      isFinal: false,
+      korean: '내일의 활동에 참가하니?',
+      chinese: {
+        hanzi: ['参加', '明天的', '活动', '吗'],
+        pinyin: ['cānjiā', 'míngtiān de', 'huódòng', 'ma'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 6,
+      isFinal: false,
+      korean: '너는 내일의 활동에 참가하니?',
+      chinese: {
+        hanzi: ['你', '参加', '明天的', '活动', '吗'],
+        pinyin: ['nǐ', 'cānjiā', 'míngtiān de', 'huódòng', 'ma'],
+      },
+    },
+    {
+      id: 'sentence8',
+      level: 7,
+      isFinal: true,
+      korean: '내일의 활동, 너는 참가하니?',
+      chinese: {
+        hanzi: ['明天的', '活动', '，', '你', '参加', '吗'],
+        pinyin: ['míngtiān de', 'huódòng', ',', 'nǐ', 'cānjiā', 'ma'],
+      },
+    },
+
+    // 문장19 묶음 (87~89)
+    {
+      id: 'sentence9',
+      level: 1,
+      isFinal: false,
+      korean: '똑똑하다',
+      chinese: {
+        hanzi: ['聪明'],
+        pinyin: ['cōngming'],
+      },
+    },
+    {
+      id: 'sentence9',
+      level: 2,
+      isFinal: false,
+      korean: '정말',
+      chinese: {
+        hanzi: ['真'],
+        pinyin: ['zhēn'],
       },
     },
     {
       id: 'sentence9',
       level: 3,
       isFinal: true,
-      korean: '동의해요, 당신 말이 맞는 것 같아요.',
+      korean: '정말 똑똑하다',
       chinese: {
-        hanzi: ['同意', '我', '觉得', '你', '说得', '对'],
-        pinyin: ['tóngyì', 'wǒ', 'juéde', 'nǐ', 'shuōde', 'duì'],
+        hanzi: ['真', '聪明'],
+        pinyin: ['zhēn', 'cōngming'],
+      },
+    },
+
+    // 문장20 묶음 (90~92)
+    {
+      id: 'sentence10',
+      level: 1,
+      isFinal: false,
+      korean: '아이',
+      chinese: {
+        hanzi: ['孩子'],
+        pinyin: ['háizi'],
+      },
+    },
+    {
+      id: 'sentence10',
+      level: 2,
+      isFinal: false,
+      korean: '너의 아이',
+      chinese: {
+        hanzi: ['你', '的', '孩子'],
+        pinyin: ['nǐ', 'de', 'háizi'],
       },
     },
     {
       id: 'sentence10',
       level: 3,
       isFinal: true,
-      korean: '저는 건강이 가장 중요하다고 생각해요.',
+      korean: '너의 아이는 정말 똑똑하다!',
       chinese: {
-        hanzi: ['我', '觉得', '健康', '最', '重要'],
-        pinyin: ['wǒ', 'juéde', 'jiànkāng', 'zuì', 'zhòngyào'],
+        hanzi: ['你', '的', '孩子', '真', '聪明'],
+        pinyin: ['nǐ', 'de', 'háizi', 'zhēn', 'cōngming'],
       },
     },
   ],
