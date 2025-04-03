@@ -1243,14 +1243,13 @@ const sentenceData = {
       isFinal: true,
       korean: '너는 매일 어떻게 출근하니? 지하철 타니?',
       chinese: {
-        hanzi: ['你', '每天', '怎么', '去', '上班', '？', '坐', '地铁', '吗'],
+        hanzi: ['你', '每天', '怎么', '去', '上班', '坐', '地铁', '吗'],
         pinyin: [
           'nǐ',
           'měitiān',
           'zěnme',
           'qù',
           'shàngbān',
-          '?',
           'zuò',
           'dìtiě',
           'ma',
@@ -1305,8 +1304,8 @@ const sentenceData = {
       isFinal: false,
       korean: '받지 못했다',
       chinese: {
-        hanzi: ['没收到'],
-        pinyin: ['méi shōudào'],
+        hanzi: ['没', '收到'],
+        pinyin: ['méi', 'shōudào'],
       },
     },
     {
@@ -1315,8 +1314,8 @@ const sentenceData = {
       isFinal: false,
       korean: '이메일을 받지 못했다',
       chinese: {
-        hanzi: ['没收到', '电子邮件'],
-        pinyin: ['méi shōudào', 'diànzǐ yóujiàn'],
+        hanzi: ['没', '收到', '电子邮件'],
+        pinyin: ['méi', 'shōudào', 'diànzǐ yóujiàn'],
       },
     },
     {
@@ -1325,8 +1324,8 @@ const sentenceData = {
       isFinal: false,
       korean: '내 이메일',
       chinese: {
-        hanzi: ['我的', '电子邮件'],
-        pinyin: ['wǒde', 'diànzǐ yóujiàn'],
+        hanzi: ['我', '的', '电子邮件'],
+        pinyin: ['wǒ', 'de', 'diànzǐ yóujiàn'],
       },
     },
     {
@@ -1335,8 +1334,8 @@ const sentenceData = {
       isFinal: true,
       korean: '너는 내 이메일을 받았니?',
       chinese: {
-        hanzi: ['你', '收到', '我的', '电子邮件', '了', '吗'],
-        pinyin: ['nǐ', 'shōudào', 'wǒde', 'diànzǐ yóujiàn', 'le', 'ma'],
+        hanzi: ['你', '收到', '我', '的', '电子邮件', '了', '吗'],
+        pinyin: ['nǐ', 'shōudào', 'wǒ', 'de', 'diànzǐ yóujiàn', 'le', 'ma'],
       },
     },
 
@@ -1387,8 +1386,8 @@ const sentenceData = {
       isFinal: true,
       korean: '주말에 우리 동물원에 가자!',
       chinese: {
-        hanzi: ['周末', '我们', '去', '动物园', '吧', '！'],
-        pinyin: ['zhōumò', 'wǒmen', 'qù', 'dòngwùyuán', 'ba', '!'],
+        hanzi: ['周末', '我们', '去', '动物园', '吧'],
+        pinyin: ['zhōumò', 'wǒmen', 'qù', 'dòngwùyuán', 'ba'],
       },
     },
 
@@ -1615,8 +1614,8 @@ const sentenceData = {
       isFinal: true,
       korean: '너 어떻게 됐니? 감기에 걸렸니?',
       chinese: {
-        hanzi: ['你', '怎么了', '？', '感冒', '了', '吗'],
-        pinyin: ['nǐ', 'zěnme le', '?', 'gǎnmào', 'le', 'ma'],
+        hanzi: ['你', '怎么了', '感冒', '了', '吗'],
+        pinyin: ['nǐ', 'zěnme le', 'gǎnmào', 'le', 'ma'],
       },
     },
 
@@ -1647,8 +1646,8 @@ const sentenceData = {
       isFinal: true,
       korean: '공원에 가자!',
       chinese: {
-        hanzi: ['去', '公园', '吧', '！'],
-        pinyin: ['qù', 'gōngyuán', 'ba', '!'],
+        hanzi: ['去', '公园', '吧'],
+        pinyin: ['qù', 'gōngyuán', 'ba'],
       },
     },
 
@@ -1689,8 +1688,8 @@ const sentenceData = {
       isFinal: false,
       korean: '공원에서 산책하자!',
       chinese: {
-        hanzi: ['去', '公园', '散步', '吧', '！'],
-        pinyin: ['qù', 'gōngyuán', 'sànbù', 'ba', '!'],
+        hanzi: ['去', '公园', '散步', '吧'],
+        pinyin: ['qù', 'gōngyuán', 'sànbù', 'ba'],
       },
     },
     {
@@ -1699,8 +1698,8 @@ const sentenceData = {
       isFinal: true,
       korean: '우리 공원에서 산책하자!',
       chinese: {
-        hanzi: ['我们', '去', '公园', '散步', '吧', '！'],
-        pinyin: ['wǒmen', 'qù', 'gōngyuán', 'sànbù', 'ba', '!'],
+        hanzi: ['我们', '去', '公园', '散步', '吧'],
+        pinyin: ['wǒmen', 'qù', 'gōngyuán', 'sànbù', 'ba'],
       },
     },
 
@@ -1961,8 +1960,8 @@ const sentenceData = {
       isFinal: false,
       korean: '여기의 환경',
       chinese: {
-        hanzi: ['这里的', '环境'],
-        pinyin: ['zhèlǐ de', 'huánjìng'],
+        hanzi: ['这里', '的', '环境'],
+        pinyin: ['zhèlǐ', 'de', 'huánjìng'],
       },
     },
     {
@@ -1981,8 +1980,8 @@ const sentenceData = {
       isFinal: true,
       korean: '여기의 환경은 괜찮다',
       chinese: {
-        hanzi: ['这里的', '环境', '不错'],
-        pinyin: ['zhèlǐ de', 'huánjìng', 'bùcuò'],
+        hanzi: ['这里', '的', '环境', '不错'],
+        pinyin: ['zhèlǐ', 'de', 'huánjìng', 'bùcuò'],
       },
     },
 
@@ -2013,8 +2012,8 @@ const sentenceData = {
       isFinal: true,
       korean: '여기의 환경은 정말 괜찮다.',
       chinese: {
-        hanzi: ['这里的', '环境', '真', '不错'],
-        pinyin: ['zhèlǐ de', 'huánjìng', 'zhēn', 'bùcuò'],
+        hanzi: ['这里', '的', '环境', '真', '不错'],
+        pinyin: ['zhèlǐ', 'de', 'huánjìng', 'zhēn', 'bùcuò'],
       },
     },
 
