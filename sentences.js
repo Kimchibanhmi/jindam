@@ -1015,8 +1015,6 @@ const sentenceData = {
       },
     },
   ],
-};
-const sentences = {
   day3: [
     // 문장1 묶음 (92-94)
     {
